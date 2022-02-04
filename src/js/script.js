@@ -1,23 +1,28 @@
+const url = `https://test-api.codingbootcamp.cz/api/14278748/events`;
+
+
 const myData = async () => {
-  const response = await fetch(
-    `https://test-api.codingbootcamp.cz/api/14278748/events`
-  );
+  const response = await fetch(url);
   const events = await response.json();
-  console.log(events);
-
-  //  In your HTML document, create a section dedicated to navigation and using JavaScript, loop through the categories in the data that you just retrieved and create a menu-item for each of them.
-
-  // category.data.forEach((element) => {
-  //   const productElem = document.createElement("div");
-  //   productElem.innerHTML = `
-  //       <div class='menu'>${element}</div>  `;
-  //   document.body.appendChild(productElem);
-  //   // find an element on the page
-  //   // let myElement = document.querySelector(".menu");
-  //   // add an event listener, waiting for the 'click' event
-  //   productElem.addEventListener("click", (e) => {
-  //     loadArticles(e.target.innerHTML);
-  //   });
-  // });
+  events.forEach((element, index) => {
+      if (index === 0){
+          firstEvent(element)
+      } else {
+          console.log("Rodrigo!!!!!!!!!");
+      }
+  });
 };
-myData();
+
+
+// Function for crearing elements 
+
+// Function for adding a form to register (Daniel's function)
+const firstEvent = data => {
+    console.log(data);
+}
+
+// Automatically calls the data (Daniel's funcction)
+document.addEventListener("DOMContentLoaded", e => {
+    myData();
+})
+
