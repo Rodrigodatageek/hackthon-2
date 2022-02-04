@@ -46,12 +46,20 @@ const firstBox = (data) => {
   const firstDiv = document.createElement("div");
   firstDiv.classList.add("first-event-box");
   const p = document.createElement("p");
+  const newDiv = document.createElement("div")
+  newDiv.classList.add("first-event-box");
+  // Button
+  const btn = document.createElement("button");
+  btn.textContent = "Register";
+  btn.addEventListener("click", () => {
+
+  } )
   const img = document.createElement("img");
   img.classList.add("first-event-image");
   p.textContent += data.name;
   p.textContent += data.description;
   img.src = data.image_url;
-
+  firstDiv.append(btn);
   firstDiv.append(p, img);
   mainDiv.appendChild(firstDiv);
 };
