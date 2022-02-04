@@ -17,26 +17,29 @@ const myData = async () => {
 };
 
 // Function for crearing elements 
-const creatingForm = () => {
-    const form = document.createElement("form");
+const creatingElement = (element, classStyle="") => {
+    const newElement = document.createElement(element);
+    newElement.classList.add(classStyle);
+    return newElement;
     
 }
 
 // Function for adding a form to register (Daniel's function)
 const firstBox = data => {
     console.log(data);
-    const firstDiv = document.createElement("div");
-    firstDiv.classList.add("first-event-box");
+    const firstDiv = creatingElement("div", "first-event-box");
+    const imageButtonDiv = creatingElement("div", "image-button");
+    const img = creatingElement("img", "first-event-image");
     const p = document.createElement("p");
-    const img = document.createElement("img");
-    img.classList.add("first-event-image");
-    p.textContent += data.name;
-    p.textContent += data.description;
+    p.textContent = `
+    ${data.name} 
+    ${data.description}
+    `;
     img.src = data.image_url;
-
-
-
-    firstDiv.append(p, img);
+    
+    // Creating the div of the images
+    imageButtonDiv.append(p, img);
+    firstDiv.appendChild(imageButtonDiv);
     mainDiv.appendChild(firstDiv);    
 }
 
