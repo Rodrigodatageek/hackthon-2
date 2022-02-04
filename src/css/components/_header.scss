@@ -1,0 +1,7 @@
+.nav__ul {
+  display: flex;
+
+  li:not(:first-child) {
+    margin-left: auto;
+  }
+}
