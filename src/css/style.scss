@@ -1,1 +1,20 @@
 @import "./pages/main-page";
+
+.second-event-box {
+  display: flex;
+  justify-content: space-around;
+}
+
+.Secondary-images {
+  width: 150px;
+  height: 150px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cards {
+  display: flex;
+}

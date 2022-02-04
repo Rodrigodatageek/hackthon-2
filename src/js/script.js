@@ -6,6 +6,7 @@ const url = `https://test-api.codingbootcamp.cz/api/14278748/events`;
 const myData = async () => {
   const response = await fetch(url);
   const events = await response.json();
+  // console.log(events);
   events.forEach((element, index) => {
     if (index === 0) {
       firstBox(element);
@@ -22,18 +23,21 @@ const creatingForm = () => {
 
 // Function for adding a box with remaining events (Rodrigo's function)
 const box = (data) => {
-  console.log(data);
+  // console.log(data);
   const SecondDiv = document.createElement("div");
   SecondDiv.classList.add("second-event-box");
   const cards = document.createElement("div");
+  cards.classList.add("cards");
   const img = document.createElement("img");
+  const container = document.querySelector(".container");
+  // console.log(container);
   img.classList.add("Secondary-images");
   cards.textContent += data.name;
   cards.textContent += data.description;
   img.src = data.image_url;
 
   SecondDiv.append(cards, img);
-  mainDiv.appendChild(SecondDiv);
+  container.appendChild(SecondDiv);
 };
 
 // Function for adding a form to register (Daniel's function)
