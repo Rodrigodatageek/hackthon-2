@@ -11,7 +11,7 @@ const myData = async () => {
       if (index === 0){
           firstBox(element)
       } else {
-          console.log("Rodrigo!!!!!!!!!");
+        //   Rodrigo's part
       }
   });
 };
@@ -25,9 +25,19 @@ const creatingForm = () => {
 // Function for adding a form to register (Daniel's function)
 const firstBox = data => {
     console.log(data);
+    const firstDiv = document.createElement("div");
+    firstDiv.classList.add("first-event-box");
     const p = document.createElement("p");
-    p.textContent = data.name;
-    mainDiv.appendChild(p);    
+    const img = document.createElement("img");
+    img.classList.add("first-event-image");
+    p.textContent += data.name;
+    p.textContent += data.description;
+    img.src = data.image_url;
+
+
+
+    firstDiv.append(p, img);
+    mainDiv.appendChild(firstDiv);    
 }
 
 // Automatically calls the data (Daniel's funcction)
